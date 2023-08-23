@@ -1,0 +1,8 @@
+Select
+        c.login,
+        Count (o.track)
+from "Orders" as o
+        INNER JOIN "Couriers" AS c ON c.id = o."courierId"
+WHERE
+        o."inDelivery" = true
+group by c.login;
